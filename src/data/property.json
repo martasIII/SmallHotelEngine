@@ -1,0 +1,27 @@
+{
+  "name": "Penzion U Lesa",
+  "tagline": "Klidné ubytování pro rodiny s dětmi na kraji lesa",
+  "description": "Rodinný penzion se čtyřmi pokoji, zahradou a dětským hřištěm. Ukázková data – nahradí je obsah skutečného klienta.",
+  "address": {
+    "street": "Lesní 1",
+    "city": "Ukázkov",
+    "zip": "000 00",
+    "country": "CZ"
+  },
+  "contact": {
+    "phone": "+420 000 000 000",
+    "email": "info@example.com"
+  },
+  "checkIn": "14:00",
+  "checkOut": "10:00",
+  "theme": {
+    "primary": "#2f6b3a",
+    "primaryDark": "#1f4a28",
+    "accent": "#8cbf5a",
+    "background": "#f6f8f3",
+    "text": "#1d2a1f"
+  },
+  "availability": {
+    "lastRoomsThreshold": 2
+  }
+}

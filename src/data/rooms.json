@@ -1,0 +1,38 @@
+[
+  {
+    "id": "rodinny-apartman",
+    "name": "Rodinný apartmán",
+    "capacity": 5,
+    "beds": "manželská postel, 3 samostatná lůžka",
+    "sizeM2": 42,
+    "description": "Dvě oddělené místnosti, kuchyňka a vlastní koupelna. Ideální pro rodinu se třemi dětmi.",
+    "amenities": ["kuchyňka", "vlastní koupelna", "dětská postýlka na vyžádání", "výhled do zahrady"]
+  },
+  {
+    "id": "pokoj-buk",
+    "name": "Pokoj Buk",
+    "capacity": 4,
+    "beds": "manželská postel, palanda",
+    "sizeM2": 28,
+    "description": "Prostorný pokoj s palandou, kterou děti milují.",
+    "amenities": ["vlastní koupelna", "lednička", "dětská postýlka na vyžádání"]
+  },
+  {
+    "id": "pokoj-dub",
+    "name": "Pokoj Dub",
+    "capacity": 3,
+    "beds": "manželská postel, přistýlka",
+    "sizeM2": 22,
+    "description": "Útulný pokoj v přízemí s přímým vstupem na terasu.",
+    "amenities": ["vlastní koupelna", "terasa", "bezbariérový přístup"]
+  },
+  {
+    "id": "pokoj-javor",
+    "name": "Pokoj Javor",
+    "capacity": 2,
+    "beds": "manželská postel",
+    "sizeM2": 18,
+    "description": "Klidný pokoj v podkroví pro dva.",
+    "amenities": ["vlastní koupelna", "lednička"]
+  }
+]

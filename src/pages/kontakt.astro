@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { property } from '../data';
+
+const { address, contact } = property;
+---
+
+<BaseLayout title="Kontakt" description={`Adresa a kontakt – ${property.name}.`}>
+  <section class="section">
+    <div class="container">
+      <h1>Kontakt</h1>
+      <div class="grid">
+        <div class="card">
+          <h3>Adresa</h3>
+          <p>
+            {property.name}<br />
+            {address.street}<br />
+            {address.zip} {address.city}
+          </p>
+        </div>
+        <div class="card">
+          <h3>Spojte se s námi</h3>
+          <p>
+            Telefon: <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a><br />
+            E-mail: <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          </p>
+        </div>
+        <div class="card">
+          <h3>Příjezd a odjezd</h3>
+          <p>
+            Příjezd od {property.checkIn}<br />
+            Odjezd do {property.checkOut}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

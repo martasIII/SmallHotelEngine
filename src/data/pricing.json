@@ -1,0 +1,20 @@
+{
+  "currency": "CZK",
+  "seasons": [
+    { "id": "hlavni", "name": "Hlavní sezóna", "period": "1. 7. – 31. 8., Vánoce a Silvestr" },
+    { "id": "mimo", "name": "Mimo sezónu", "period": "ostatní termíny" }
+  ],
+  "rates": [
+    { "roomId": "rodinny-apartman", "perNight": { "hlavni": 2900, "mimo": 2300 } },
+    { "roomId": "pokoj-buk",        "perNight": { "hlavni": 2200, "mimo": 1800 } },
+    { "roomId": "pokoj-dub",        "perNight": { "hlavni": 1800, "mimo": 1500 } },
+    { "roomId": "pokoj-javor",      "perNight": { "hlavni": 1400, "mimo": 1200 } }
+  ],
+  "minNights": 2,
+  "notes": [
+    "Ceny jsou za pokoj a noc, včetně DPH.",
+    "Děti do 3 let zdarma bez nároku na lůžko.",
+    "Snídaně na vyžádání 150 Kč za osobu.",
+    "Místní poplatek z pobytu se platí zvlášť podle vyhlášky obce."
+  ]
+}

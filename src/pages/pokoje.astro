@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RoomCard from '../components/RoomCard.astro';
+import { rooms } from '../data';
+---
+
+<BaseLayout title="Pokoje" description="Přehled pokojů, jejich kapacity a vybavení.">
+  <section class="section">
+    <div class="container">
+      <h1>Pokoje</h1>
+      <div class="grid">
+        {rooms.map((room) => <RoomCard room={room} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

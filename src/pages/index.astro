@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RoomCard from '../components/RoomCard.astro';
+import { property, rooms, pricing, formatPrice } from '../data';
+import { plural } from '../lib/cs';
+
+const lowestPrice = Math.min(...pricing.rates.flatMap((r) => Object.values(r.perNight)));
+const maxCapacity = Math.max(...rooms.map((r) => r.capacity));
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="container">
+      <h1>{property.name}</h1>
+      <p>{property.tagline}</p>
+      <a class="button" href="/rezervace/">Ověřit volný termín</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Proč k nám</h2>
+      <p>{property.description}</p>
+      <ul>
+        <li>
+          {rooms.length} {plural(rooms.length, 'pokoj', 'pokoje', 'pokojů')}, až {maxCapacity}
+          {plural(maxCapacity, 'osoba', 'osoby', 'osob')} v jednom pokoji
+        </li>
+        <li>Ubytování od {formatPrice(lowestPrice)} za pokoj a noc</li>
+        <li>Příjezd od {property.checkIn}, odjezd do {property.checkOut}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Pokoje</h2>
+      <div class="grid">
+        {rooms.map((room) => <RoomCard room={room} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

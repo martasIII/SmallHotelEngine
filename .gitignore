@@ -1,0 +1,21 @@
+# build
+dist/
+.astro/
+
+# závislosti
+node_modules/
+
+# logy
+npm-debug.log*
+
+# prostředí a tajné údaje – nikdy necommitovat
+.env
+.env.*
+!.env.example
+
+# OS a editory
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
