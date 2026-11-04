@@ -1,0 +1,20 @@
+---
+import { property } from '../data';
+
+const year = new Date().getFullYear();
+const { address, contact } = property;
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>{property.name}</strong><br />
+      {address.street}, {address.zip} {address.city}
+    </div>
+    <div>
+      <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a><br />
+      <a href={`mailto:${contact.email}`}>{contact.email}</a>
+    </div>
+    <div class="muted">© {year} {property.name}</div>
+  </div>
+</footer>

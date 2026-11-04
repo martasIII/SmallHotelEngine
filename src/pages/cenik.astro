@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { rooms, pricing, formatPrice } from '../data';
+import { plural } from '../lib/cs';
+
+const roomName = (id: string) => rooms.find((r) => r.id === id)?.name ?? id;
+---
+
+<BaseLayout title="Ceník" description="Ceny ubytování podle pokoje a sezóny.">
+  <section class="section">
+    <div class="container">
+      <h1>Ceník</h1>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Pokoj</th>
+              {
+                pricing.seasons.map((s) => (
+                  <th scope="col">
+                    {s.name}
+                    <br />
+                    <small>{s.period}</small>
+                  </th>
+                ))
+              }
+            </tr>
+          </thead>
+          <tbody>
+            {
+              pricing.rates.map((rate) => (
+                <tr>
+                  <th scope="row">{roomName(rate.roomId)}</th>
+                  {pricing.seasons.map((s) => {
+                    const price = rate.perNight[s.id];
+                    return <td class="price">{price !== undefined ? formatPrice(price) : '–'}</td>;
+                  })}
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p>Minimální délka pobytu: {pricing.minNights} {plural(pricing.minNights, 'noc', 'noci', 'nocí')}.</p>
+      <ul>
+        {pricing.notes.map((note) => <li>{note}</li>)}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  tbody th {
+    background: none;
+    color: inherit;
+  }
+</style>

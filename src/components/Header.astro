@@ -1,0 +1,32 @@
+---
+import { property } from '../data';
+
+const links = [
+  { href: '/', label: 'Úvod' },
+  { href: '/pokoje/', label: 'Pokoje' },
+  { href: '/cenik/', label: 'Ceník' },
+  { href: '/rezervace/', label: 'Rezervace' },
+  { href: '/kontakt/', label: 'Kontakt' },
+];
+
+const current = Astro.url.pathname.replace(/\/?$/, '/');
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">{property.name}</a>
+    <nav aria-label="Hlavní navigace">
+      <ul class="nav">
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href} aria-current={current === link.href ? 'page' : undefined}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

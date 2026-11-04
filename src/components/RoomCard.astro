@@ -1,0 +1,22 @@
+---
+import type { Room } from '../data';
+import { plural } from '../lib/cs';
+
+interface Props {
+  room: Room;
+}
+
+const { room } = Astro.props;
+// „až 1 osobu“ by bylo divné, ale pokoj pro jednoho je v penzionu výjimka; pro 1 použijeme „1 osoba“.
+const persons = plural(room.capacity, 'osoba', 'osoby', 'osob');
+const details = [`až ${room.capacity} ${persons}`, room.sizeM2 ? `${room.sizeM2} m²` : null, room.beds].filter(Boolean).join(' · ');
+---
+
+<article class="card room-card" id={room.id}>
+  <h3>{room.name}</h3>
+  <p class="muted">{details}</p>
+  <p>{room.description}</p>
+  <ul class="tags">
+    {room.amenities.map((a) => <li>{a}</li>)}
+  </ul>
+</article>

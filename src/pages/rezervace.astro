@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { property } from '../data';
+---
+
+<BaseLayout title="Rezervace" description="Kalendář obsazenosti a nezávazná poptávka pobytu.">
+  <section class="section">
+    <div class="container">
+      <h1>Rezervace</h1>
+      <div class="placeholder">
+        <p><strong>Připravujeme kalendář obsazenosti a poptávkový formulář.</strong></p>
+        <p>
+          Do té doby nás prosím kontaktujte na
+          <a href={`mailto:${property.contact.email}`}>{property.contact.email}</a>
+          nebo telefonu <a href={`tel:${property.contact.phone.replace(/\s/g, '')}`}>{property.contact.phone}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
